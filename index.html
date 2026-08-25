@@ -15,6 +15,13 @@
   <body>
     <a href="#main" class="skip-link">跳至主要內容</a>
 
+    <div class="video-modal" id="videoModal" hidden role="dialog" aria-modal="true" aria-label="影片播放器">
+      <button class="video-modal-close" type="button" aria-label="關閉影片">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="video-modal-frame" id="videoModalFrame"></div>
+    </div>
+
     <header class="site-header" id="siteHeader">
       <div class="container header-inner">
         <a href="#top" class="brand" aria-label="崑山科技大學 首頁">
@@ -36,6 +43,7 @@
             <li><a href="#academics">學院科系</a></li>
             <li><a href="#features">辦學特色</a></li>
             <li><a href="#campus">校園生活</a></li>
+            <li><a href="#videos">看見崑山</a></li>
             <li><a href="#admissions">招生管道</a></li>
             <li><a href="#stories">校友故事</a></li>
             <li><a href="#contact">聯絡我們</a></li>
@@ -55,6 +63,7 @@
           <li><a href="#academics">學院科系</a></li>
           <li><a href="#features">辦學特色</a></li>
           <li><a href="#campus">校園生活</a></li>
+          <li><a href="#videos">看見崑山</a></li>
           <li><a href="#admissions">招生管道</a></li>
           <li><a href="#stories">校友故事</a></li>
           <li><a href="#contact">聯絡我們</a></li>
@@ -95,7 +104,21 @@
             </ul>
           </div>
 
-          <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual">
+            <div class="hero-video">
+              <button class="hero-video-btn" type="button" data-video-id="sbhau2n39Fo" aria-label="播放崑山科技大學形象影片">
+                <img src="public/images/video-main.jpg" alt="崑山科技大學 您的選擇 成就您的人生 形象影片" loading="lazy" />
+                <span class="hero-video-overlay" aria-hidden="true">
+                  <span class="hero-play-icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                  </span>
+                  <span class="hero-video-meta">
+                    <span class="hero-video-tag">官方形象影片</span>
+                    <span class="hero-video-title">您的選擇 成就您的人生</span>
+                  </span>
+                </span>
+              </button>
+            </div>
             <div class="visual-card visual-card-1">
               <div class="visual-card-label">AI × 智慧製造</div>
               <div class="visual-card-shape shape-1"></div>
@@ -104,11 +127,7 @@
               <div class="visual-card-label">半導體人才培育</div>
               <div class="visual-card-shape shape-2"></div>
             </div>
-            <div class="visual-card visual-card-3">
-              <div class="visual-card-label">永續設計 × 美學</div>
-              <div class="visual-card-shape shape-3"></div>
-            </div>
-            <div class="visual-orb"></div>
+            <div class="visual-orb" aria-hidden="true"></div>
           </div>
         </div>
         <div class="hero-marquee" aria-hidden="true">
@@ -512,6 +531,75 @@
           <div class="admission-cta">
             <a href="https://recruit.ksu.edu.tw" class="btn btn-primary btn-lg" target="_blank" rel="noopener">前往招生事務處 →</a>
             <a href="#contact" class="btn btn-ghost-light btn-lg">預約一對一諮詢</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-videos" id="videos">
+        <div class="container">
+          <div class="section-head">
+            <p class="section-eyebrow">SEE KSU IN MOTION</p>
+            <h2 class="section-title">看見<span class="text-accent">崑山</span>，<br/>從一幀開始</h2>
+            <p class="section-lede">官方形象影片 × 校簡介精華版。兩支影片，帶你走進崑山的課堂、實作基地、與生活現場。</p>
+          </div>
+
+          <div class="video-grid">
+            <article class="video-card video-card-feature">
+              <button class="video-thumb" type="button" data-video-id="sbhau2n39Fo" aria-label="播放崑山科技大學 您的選擇 成就您的人生 形象影片">
+                <img src="public/images/video-main.jpg" alt="崑山科技大學 您的選擇 成就您的人生 形象影片" loading="lazy" />
+                <span class="video-thumb-overlay">
+                  <span class="video-play-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                  </span>
+                </span>
+                <span class="video-duration">3:21</span>
+              </button>
+              <div class="video-info">
+                <span class="video-tag">BRAND FILM</span>
+                <h3>您的選擇 成就您的人生</h3>
+                <p>崑山 60 年的故事：一流師資、億級設備、12 間類產線基地，看見學生的選擇如何成就他們的人生。</p>
+                <ul class="video-meta">
+                  <li>崑山科技大學 官方</li>
+                  <li>2023 · 16 萬次瀏覽</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="video-card">
+              <button class="video-thumb" type="button" data-video-id="6lgg-3QRgnc" aria-label="播放崑山科技大學 校簡介中文短版 2026">
+                <img src="public/images/video-short.jpg" alt="崑山科技大學 校簡介中文短版 2026" loading="lazy" />
+                <span class="video-thumb-overlay">
+                  <span class="video-play-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                  </span>
+                </span>
+                <span class="video-duration">校簡介</span>
+              </button>
+              <div class="video-info">
+                <span class="video-tag">CAMPUS TOUR</span>
+                <h3>校簡介 2026 中文短版</h3>
+                <p>3 分鐘看完崑山：5 大學院、24 個科系、產學合作、國際接軌——一所你想像中更精彩的科技大學。</p>
+                <ul class="video-meta">
+                  <li>2026 最新版本</li>
+                  <li>3 分鐘看完</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="video-channels">
+            <a href="https://www.youtube.com/@ksupsoa" class="channel-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+              訂閱 YouTube 頻道
+            </a>
+            <a href="https://www.facebook.com/ksu.edu.tw/" class="channel-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>
+              追蹤 Facebook 粉專
+            </a>
+            <a href="https://www.instagram.com/my_ksu_ig/" class="channel-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.4-.2 1.1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1M12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.2.6c-.8.3-1.5.7-2.1 1.4C1.4 2.6 1 3.3.7 4.1c-.3.7-.5 1.6-.6 2.9C0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.1.6.6 1.3 1.1 2.1 1.4.7.3 1.6.5 2.9.6C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.1-1.4.6-.6 1.1-1.3 1.4-2.1.3-.7.5-1.6.6-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.1C21.4 1.4 20.7 1 19.9.7c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+              追蹤 Instagram
+            </a>
           </div>
         </div>
       </section>

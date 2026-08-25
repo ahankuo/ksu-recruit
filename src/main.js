@@ -116,6 +116,63 @@ form.addEventListener("submit", (e) => {
   }, 700);
 });
 
+// ---------- Video modal ----------
+const videoModal = document.getElementById("videoModal");
+const videoModalFrame = document.getElementById("videoModalFrame");
+const videoModalClose = videoModal ? videoModal.querySelector(".video-modal-close") : null;
+let lastFocusedVideoBtn = null;
+
+const openVideo = (videoId, trigger) => {
+  if (!videoModal || !videoModalFrame) return;
+  lastFocusedVideoBtn = trigger || null;
+  videoModalFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="崑山科技大學 影片" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  // Fallback link in case iframe can't load (cookie/tracker restrictions)
+  setTimeout(() => {
+    if (!videoModal.hidden && !videoModalFrame.querySelector('iframe')) return;
+    const existingFallback = videoModalFrame.querySelector('.video-fallback');
+    if (existingFallback) return;
+    const fallback = document.createElement('a');
+    fallback.href = `https://www.youtube.com/watch?v=${videoId}`;
+    fallback.target = '_blank';
+    fallback.rel = 'noopener';
+    fallback.className = 'video-fallback';
+    fallback.textContent = '在 YouTube 中開啟 →';
+    videoModalFrame.appendChild(fallback);
+  }, 1500);
+  videoModal.hidden = false;
+  document.body.style.overflow = "hidden";
+  if (videoModalClose) videoModalClose.focus();
+};
+
+const closeVideo = () => {
+  if (!videoModal) return;
+  videoModal.hidden = true;
+  videoModalFrame.innerHTML = "";
+  document.body.style.overflow = "";
+  if (lastFocusedVideoBtn) lastFocusedVideoBtn.focus();
+};
+
+document.querySelectorAll("[data-video-id]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const id = btn.dataset.videoId;
+    if (id) openVideo(id, btn);
+  });
+});
+
+if (videoModalClose) {
+  videoModalClose.addEventListener("click", closeVideo);
+}
+
+if (videoModal) {
+  videoModal.addEventListener("click", (e) => {
+    if (e.target === videoModal) closeVideo();
+  });
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && videoModal && !videoModal.hidden) closeVideo();
+});
+
 // ---------- IntersectionObserver: reveal on scroll ----------
 const revealEls = document.querySelectorAll(
   ".section-head, .college-card, .feature-card, .industry-card, .campus-card, .story-card, .industry-list li"
